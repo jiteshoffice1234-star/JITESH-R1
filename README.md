@@ -1,123 +1,158 @@
 # ☀️ Solar System Explorer
 
-An interactive, touch-optimized Solar System learning app built with React, Capacitor, and Canvas. Works as a web app, PWA, and native Android APK.
+**Interactive Solar System Learning App — Available as Web, PWA, and Android APK**
 
-![Solar System](https://img.shields.io/badge/Planets-8-blue) ![Build](https://img.shields.io/badge/Build-Passing-green) ![Platform](https://img.shields.io/badge/Platform-Android%20%7C%20Web%20%7C%20PWA-orange)
+![Version](https://img.shields.io/badge/version-1.0.0-blue)
+![Platform](https://img.shields.io/badge/platform-Android%20%7C%20Web%20%7C%20PWA-green)
+![License](https://img.shields.io/badge/license-MIT-orange)
+![Build](https://img.shields.io/badge/build-passing-brightgreen)
+
+## 📱 Get the APK
+
+**3 easy ways to get your Android APK:**
+
+### ⭐ Method 1: GitHub Actions (Automatic)
+Push a tag to GitHub → APK is built automatically and attached to the release:
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
+Then download from your repo's **Releases** tab.
+
+### ⭐ Method 2: PWABuilder (No coding)
+1. Deploy to Vercel/Netlify
+2. Visit [pwabuilder.com](https://www.pwabuilder.com/)
+3. Enter your URL → Build → Android → Download APK
+
+### ⭐ Method 3: Build Locally
+```bash
+node build-apk.js
+```
+
+👉 **Full instructions:** [HOW_TO_GET_APK.md](HOW_TO_GET_APK.md)
+
+---
 
 ## 🎮 Features
 
-- 🪐 All 8 planets with smooth orbital animations
-- 📊 Detailed planet info (diameter, distance, orbital period)
-- ⏯️ Play/pause and variable speed controls (0.1x - 10x)
-- 📱 Touch-optimized: pinch-to-zoom, drag-to-pan
-- 🌟 Beautiful starfield with twinkling effects
-- 📴 Works completely offline
-- 📳 Haptic feedback on supported devices
+- ☀️ **Animated Sun** with pulsing corona effects
+- 🪐 **All 8 planets** with accurate relative orbital speeds
+- 🌟 **Beautiful starfield** with 300 twinkling stars
+- 📊 **Planet info panels** — tap any planet for:
+  - Diameter (km)
+  - Distance from Sun (million km)
+  - Orbital period (Earth days/years)
+  - Relative orbital speed
+- 🎛️ **Playback controls** — Play/Pause + Speed (0.1x to 10x)
+- 📱 **Touch-optimized** — Pinch zoom, drag pan, tap to select
+- 📴 **Works offline** — No internet needed after install
+- 📳 **Haptic feedback** on supported devices
+- 💫 **Planet trails** and Saturn's rings
+- 🏷️ **Toggle labels** on/off
+- 📦 **~8 MB** APK size
+- 📱 **Android 5.0+** (works on 99% of devices)
+
+---
 
 ## 🚀 Quick Start
 
-### Web Version
+### Web Development
 ```bash
 npm install
 npm run dev
 ```
 
-### Build APK (One Command)
+### Build for Production
 ```bash
-node build-apk.js
-```
-
-This will:
-1. Install all dependencies
-2. Build the web app
-3. Set up Capacitor Android
-4. Compile the APK
-5. Output `SolarSystemExplorer.apk`
-
-## 📱 Building the APK
-
-### Prerequisites
-- Node.js v16+
-- Android Studio (with SDK)
-- Java JDK 17
-
-### Automated Build
-```bash
-# Node.js script (recommended)
-node build-apk.js
-
-# Or shell scripts
-./build-apk.sh    # Mac/Linux
-build-apk.bat     # Windows
-```
-
-### Manual Build
-```bash
-npm install
 npm run build
-npx cap add android
-npx cap sync android
-cd android && ./gradlew assembleDebug && cd ..
-cp android/app/build/outputs/apk/debug/app-debug.apk SolarSystemExplorer.apk
 ```
 
-### Using PWABuilder (No Android Studio needed)
-1. Deploy the web app to any hosting service
-2. Visit [PWABuilder.com](https://www.pwabuilder.com/)
-3. Enter your URL and click Build → Android
-4. Download the generated APK
+### Build Android APK
+```bash
+node build-apk.js
+```
 
-## 📲 Installing the APK
+### Create a Release
+```bash
+node release.js patch   # v1.0.0 → v1.0.1
+node release.js minor   # v1.0.0 → v1.1.0
+node release.js major   # v1.0.0 → v2.0.0
+```
 
-1. Transfer `SolarSystemExplorer.apk` to your Android device
-2. Enable "Install from Unknown Sources" in Settings
-3. Open the APK file and tap Install
-4. Launch from your home screen!
-
-## 🛠️ Tech Stack
-
-- **React** - UI framework
-- **TypeScript** - Type safety
-- **Tailwind CSS** - Styling
-- **Canvas API** - Smooth 60fps animations
-- **Capacitor** - Native Android wrapper
-- **Service Worker** - Offline support
-- **PWA Manifest** - Installable web app
+---
 
 ## 📁 Project Structure
 
 ```
 ├── src/
-│   ├── App.tsx          # Main app with canvas rendering
-│   ├── data/planets.ts  # Planet data and info
-│   ├── index.css        # Global styles
-│   └── main.tsx         # Entry point
+│   ├── App.tsx              # Main app with canvas rendering
+│   ├── data/planets.ts      # Planet data (8 planets)
+│   ├── index.css            # Global styles + animations
+│   └── main.tsx             # Entry point
 ├── public/
-│   ├── manifest.json    # PWA manifest
-│   ├── sw.js            # Service worker
-│   └── apk-guide.html   # APK download guide
-├── capacitor.config.ts  # Capacitor configuration
-├── build-apk.js         # Automated APK builder
-├── build-apk.sh         # Shell build script
-└── build-apk.bat        # Windows build script
+│   ├── manifest.json        # PWA manifest
+│   ├── sw.js                # Service worker (offline)
+│   └── apk-guide.html       # Visual APK guide
+├── .github/workflows/
+│   └── build-apk.yml        # Auto-build APK on release
+├── capacitor.config.ts      # Android native config
+├── build-apk.js             # Automated APK builder
+├── build-apk.sh             # Shell script (Mac/Linux)
+├── build-apk.bat            # Batch script (Windows)
+├── release.js               # Version & release manager
+├── LICENSE                  # MIT License
+├── CHANGELOG.md             # Version history
+└── README.md                # This file
 ```
-
-## 🎨 Customization
-
-### Change App Name/ID
-Edit `capacitor.config.ts`:
-```typescript
-appId: 'com.yourcompany.app',
-appName: 'Your App Name',
-```
-
-### Change App Icon
-Replace files in `android/app/src/main/res/mipmap-*/`
-
-## 📄 License
-
-MIT License - Feel free to use and modify!
 
 ---
 
-Built with ❤️ for space exploration education
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|------------|---------|
+| React 18 | UI Framework |
+| TypeScript | Type Safety |
+| Tailwind CSS | Styling |
+| Canvas API | 60fps Animations |
+| Capacitor | Native Android Wrapper |
+| Service Worker | Offline Support |
+| GitHub Actions | Auto APK Build |
+
+---
+
+## 📲 Installing the APK
+
+1. Download `SolarSystemExplorer.apk`
+2. Transfer to your Android phone
+3. Enable "Install from Unknown Sources" in Settings
+4. Tap the APK → Install
+5. Launch from home screen!
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to:
+- Report bugs
+- Suggest features
+- Submit pull requests
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🙏 Acknowledgments
+
+- Planet data from NASA
+- Built with love for space education
+
+---
+
+**Made with ❤️ for space exploration**
+
+🌍 🪐 ☀️ 🌟 🚀
