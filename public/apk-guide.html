@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Solar System Explorer APK</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a1a;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 600px;
+            width: 100%;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #ffcc00, #ff6600);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .header p {
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+        }
+        .card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+        .card h2 {
+            font-size: 18px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .method {
+            padding: 16px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            margin-bottom: 12px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .method h3 {
+            font-size: 15px;
+            margin-bottom: 8px;
+            color: #4da6ff;
+        }
+        .method p {
+            font-size: 13px;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.6;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 14px;
+            margin-top: 12px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(59,130,246,0.3);
+        }
+        .btn-green {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+        .btn-green:hover {
+            box-shadow: 0 8px 20px rgba(16,185,129,0.3);
+        }
+        .steps {
+            list-style: none;
+            counter-reset: step;
+        }
+        .steps li {
+            counter-increment: step;
+            padding: 8px 0 8px 36px;
+            position: relative;
+            font-size: 13px;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.5;
+        }
+        .steps li::before {
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 24px;
+            height: 24px;
+            background: rgba(59,130,246,0.2);
+            border: 1px solid rgba(59,130,246,0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: bold;
+            color: #4da6ff;
+        }
+        .code {
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            color: #10b981;
+            margin: 8px 0;
+            overflow-x: auto;
+        }
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            background: rgba(16,185,129,0.2);
+            border: 1px solid rgba(16,185,129,0.3);
+            border-radius: 6px;
+            font-size: 11px;
+            color: #10b981;
+            margin-left: 8px;
+        }
+        .divider {
+            height: 1px;
+            background: rgba(255,255,255,0.1);
+            margin: 20px 0;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: rgba(255,255,255,0.3);
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>☀️ Solar System Explorer</h1>
+            <p>Build your Android APK - Choose your method below</p>
+        </div>
+
+        <!-- Method 1: PWABuilder (Easiest) -->
+        <div class="card">
+            <h2>🌐 Method 1: PWABuilder <span class="badge">Easiest</span></h2>
+            <p style="font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 16px;">
+                No coding required! Generate APK directly from your deployed URL.
+            </p>
+            <ol class="steps">
+                <li>Deploy this project to a hosting service (Vercel, Netlify, GitHub Pages)</li>
+                <li>Visit PWABuilder with your deployed URL</li>
+                <li>Click "Build" → "Android" to generate your APK</li>
+                <li>Download the signed APK and install on any Android device</li>
+            </ol>
+            <a href="https://www.pwabuilder.com/" target="_blank" class="btn btn-green">
+                🚀 Open PWABuilder
+            </a>
+        </div>
+
+        <!-- Method 2: Local Build -->
+        <div class="card">
+            <h2>💻 Method 2: Build Locally <span class="badge">Full Control</span></h2>
+            <p style="font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 16px;">
+                Build the APK on your computer using Android Studio or command line.
+            </p>
+
+            <h3 style="font-size: 14px; margin-bottom: 12px;">Prerequisites:</h3>
+            <ul class="steps">
+                <li>Install <a href="https://nodejs.org/" style="color: #4da6ff;">Node.js</a> (v16+)</li>
+                <li>Install <a href="https://developer.android.com/studio" style="color: #4da6ff;">Android Studio</a></li>
+                <li>Accept Android SDK licenses</li>
+            </ul>
+
+            <div class="divider"></div>
+
+            <h3 style="font-size: 14px; margin-bottom: 12px;">Build Steps:</h3>
+            <div class="code">
+# 1. Install dependencies<br>
+npm install<br><br>
+# 2. Build web app<br>
+npm run build<br><br>
+# 3. Add Android platform<br>
+npx cap add android<br><br>
+# 4. Sync web assets<br>
+npx cap sync android<br><br>
+# 5. Build APK<br>
+cd android<br>
+./gradlew assembleDebug<br>
+cd ..<br><br>
+# 6. Copy APK<br>
+cp android/app/build/outputs/apk/debug/app-debug.apk .<br>
+mv app-debug.apk SolarSystemExplorer.apk
+            </div>
+
+            <p style="font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 12px;">
+                💡 Or just run <code style="color: #10b981;">build-apk.sh</code> (Mac/Linux) or <code style="color: #10b981;">build-apk.bat</code> (Windows)
+            </p>
+        </div>
+
+        <!-- Method 3: Android Studio -->
+        <div class="card">
+            <h2>📱 Method 3: Android Studio <span class="badge">Visual</span></h2>
+            <p style="font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 16px;">
+                Use Android Studio's visual interface to build and test.
+            </p>
+            <ol class="steps">
+                <li>Run: <code style="color: #10b981;">npm run build && npx cap add android && npx cap sync</code></li>
+                <li>Open Android project: <code style="color: #10b981;">npx cap open android</code></li>
+                <li>Wait for Gradle sync to complete</li>
+                <li>Click Build → Build Bundle(s) / APK(s) → Build APK(s)</li>
+                <li>Click "locate" to find your APK file</li>
+            </ol>
+        </div>
+
+        <!-- Installation -->
+        <div class="card">
+            <h2>📲 Installing the APK</h2>
+            <ol class="steps">
+                <li>Transfer <code style="color: #10b981;">SolarSystemExplorer.apk</code> to your Android device</li>
+                <li>Open Settings → Security → Enable "Install from Unknown Sources"</li>
+                <li>Open the APK file using a file manager</li>
+                <li>Tap "Install" and wait for completion</li>
+                <li>Open the app from your home screen!</li>
+            </ol>
+        </div>
+
+        <div class="footer">
+            <p>Solar System Explorer • Built with Capacitor + React</p>
+            <p style="margin-top: 8px;">Works offline • No internet required after install</p>
+        </div>
+    </div>
+</body>
+</html>
